@@ -23,7 +23,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className={`${styles.flexCenter} flex-1 flex-col md:flex-row`}>
+      <div className={`${styles.flexCenter} flex-1 flex-col md:flex-row flex-wrap`}>
         {feedback.map((feedback) => (
           <div
             key={feedback.id}

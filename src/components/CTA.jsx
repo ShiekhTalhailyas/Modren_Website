@@ -18,7 +18,7 @@ const CTA = () => {
       </div>
       <div className=" bg-gradient-to-br from-slate-700 rounded-[20px] to-gray-900 my-20">
         <div
-          className={`${styles.flexCenter} flex-1 flex-col md:flex-row p-10`}
+          className={`${styles.flexCenter} flex-1 flex-col md:flex-row md:p-10 p-4`}
         >
           <div>
             <h1 className="text-white font-semibold font-poppins md:text-[48px] md:leading-[76.8px] text-[20px] leading-[30px]">
@@ -29,7 +29,7 @@ const CTA = () => {
               anywhere on the planet.
             </p>
           </div>
-          <div className="ml-5">
+          <div className=" flex flex-1 items-center justify-center md:ml-5 m-0">
             <button className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[10px] md:p-4 p-2 my-3 md:my:0 md:text-[20px] text-[12px] text-white font-normal font-poppins ">
               Get Started
             </button>

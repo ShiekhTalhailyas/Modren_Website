@@ -1,4 +1,3 @@
-import React from "react";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 import { useState } from "react";
@@ -7,21 +6,25 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  console.log(active)
   return (
-    <nav className="flex flex-1 items-center justify-between py-6 w-full">
-      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+    <nav className="flex flex-1 items-center justify-between py-6 w-full navbar">
+      <a href="#home">
+        {" "}
+        <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      </a>
 
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+      <ul className=" md:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? "text-white" : "text-blue-300"
-            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
+            className={`font-poppins font-normal cursor-pointer text-[16px] 
+            ${active === nav.title ? "text-white" : "text-blue-300"} ${
+              index === navLinks.length - 1 ? "mr-0" : "mr-10"
+            }`}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`#${nav.id}`} onClick={() => setActive(nav.title)}>
+              {nav.title}
+            </a>
           </li>
         ))}
       </ul>
@@ -33,6 +36,7 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
         />
       </div>
+
       <div
         className={`${
           toggle ? "flex-col " : "hidden"
@@ -50,9 +54,7 @@ const Navbar = () => {
               onClick={() => setActive(nav.title)}
             >
               {" "}
-              <a href={`#${nav.id}`}>
-                {nav.title}
-              </a>
+              <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
